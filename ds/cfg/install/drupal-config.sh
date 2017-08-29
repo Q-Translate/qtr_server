@@ -2,6 +2,12 @@
 
 source /host/settings.sh
 
+### prevent robots from crawling
+cat <<EOF > $DRUPAL_DIR/robots.txt
+User-agent: *
+Disallow: /
+EOF
+
 # protect drupal settings
 drupal_settings=$DRUPAL_DIR/sites/default/settings.php
 chown root:www-data $drupal_settings

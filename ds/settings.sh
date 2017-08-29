@@ -19,5 +19,8 @@ GMAIL_PASSWD=
 ### Admin settings.
 ADMIN_PASS=123456
 
+### Translation languages supported by the Q-Translate Server.
+LANGUAGES='en fr de it sq'
+
 ### Uncomment if this installation is for development.
 DEV=true

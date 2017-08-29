@@ -2,9 +2,6 @@
 
 source /host/settings.sh
 
-### expose the logo file on the drupal dir
-ln -s $DRUPAL_DIR/profiles/qtr_server/qtr_server.png $DRUPAL_DIR/logo.png
-
 ### put the cache on RAM (to improve efficiency)
 sed -i /etc/fstab \
     -e '/appended by installation scripts/,$ d'
@@ -36,6 +33,14 @@ X11Forwarding no
 EOF
 
 echo $DOMAIN > /etc/hostname
+
+# cat <<_EOF > /etc/rc.local
+# #!/bin/sh -e
+# ### start the watcher of comments
+# $DRUPAL_DIR/profiles/qtr_server/utils/watch-comments.sh &
+# exit 0
+# _EOF
+# chmod +x /etc/rc.local
 
 cat <<EOF > /root/.bash_aliases
 alias mysql='mysql --defaults-file=/etc/mysql/debian.cnf'
@@ -74,3 +79,18 @@ cat <<EOF > /root/.gitconfig
     visualise = !gitk
     graph = log --color --graph --pretty=format:\"%h | %ad | %an | %s%d\" --date=short
 EOF
+
+# setup cron
+cat <<EOF > /etc/cron.d/twitter
+0 4 * * *  twitter  $DRUPAL_DIR/profiles/qtr_server/utils/twitter.sh > /dev/null 2>&1
+
+### uncomment this line only for debugging
+#*/5 * * * *  twitter  $DRUPAL_DIR/profiles/qtr_server/utils/twitter.sh
+EOF
+
+# cat <<EOF > /etc/cron.d/fortune
+# 0 */5 * * *  twitter  $DRUPAL_DIR/profiles/qtr_server/utils/fortune.sh > /dev/null 2>&1
+#
+# ### uncomment this line only for debugging
+# #*/5 * * * *  twitter  $DRUPAL_DIR/profiles/qtr_server/utils/fortune.sh
+# EOF

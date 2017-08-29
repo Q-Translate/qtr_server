@@ -34,6 +34,14 @@ cp -a libraries/bootstrap themes/contrib/bootstrap/
 cp -a libraries/bootstrap themes/qtr_server/
 cp libraries/bootstrap/less/variables.less themes/qtr_server/less/
 
+### copy hybridauth provider GitHub.php to the right place
+cd $DRUPAL_DIR/profiles/btr_server/libraries/hybridauth/
+cp additional-providers/hybridauth-github/Providers/GitHub.php \
+   hybridauth/Hybrid/Providers/
+
+### copy the logo file to the drupal dir
+ln -s $DRUPAL_DIR/profiles/qtr_server/qtr_server.png $DRUPAL_DIR/logo.png
+
 ### set propper directory permissions
 mkdir -p $DRUPAL_DIR/sites/all/translations
 chown -R www-data: $DRUPAL_DIR/sites/all/translations
@@ -41,6 +49,15 @@ mkdir -p sites/default/files/
 chown -R www-data: sites/default/files/
 mkdir -p cache/
 chown -R www-data: cache/
-### create the downloads dir
+
+### put a link to the data directory on /var/www/data
+rm -f /var/www/data
+ln -s $DRUPAL_DIR/profiles/qtr_server/modules/custom/qtrCore/data /var/www/data
+
+### create the downloads dir etc.
 mkdir -p /var/www/downloads/
 chown www-data /var/www/downloads/
+mkdir -p /var/www/exports/
+chown www-data: /var/www/exports/
+mkdir -p /var/www/uploads/
+chown www-data: /var/www/uploads/
