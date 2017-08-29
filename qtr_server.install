@@ -21,11 +21,11 @@ function qtr_server_install() {
   variable_set('user_register', USER_REGISTER_VISITORS);
   variable_set('user_email_verification', TRUE);
 
-  _qtr_server_install_mailsystem();
-  _qtr_server_install_user_restrictions();
+  _qtrserver_install_mailsystem();
+  _qtrserver_install_user_restrictions();
 }
 
-function _qtr_server_install_mailsystem()
+function _qtrserver_install_mailsystem()
 {
   variable_set('mailsystem_theme', 'current');
 
@@ -35,7 +35,7 @@ function _qtr_server_install_mailsystem()
   variable_set('mail_system', $mail_system);
 }
 
-function _qtr_server_install_user_restrictions() {
+function _qtrserver_install_user_restrictions() {
   db_insert('user_restrictions')
     ->fields(array(
       'mask' => '%@netcourrier.com',

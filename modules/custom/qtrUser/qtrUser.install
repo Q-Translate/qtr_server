@@ -1,0 +1,71 @@
+<?php
+/**
+ * @file qtrUser.install
+ * Install and update functions for the module qtrUser.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function qtrUser_install() {
+  // create custom fields for user preferencies
+  _qtrUser_create_userprofile_fields();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function qtrUser_uninstall() {
+  // delete the custom fields of user preferencies
+  _qtrUser_delete_userprofile_fields();
+}
+
+/**
+ * This function is called by hook_uninstall(), in order
+ * to delete the custom fields created by qtrUser.
+ */
+function _qtrUser_delete_userprofile_fields() {
+
+  $field_names = array(
+    'field_translation_lng',
+  );
+
+  foreach ($field_names as $field_name) {
+    $instance = field_info_instance('user', $field_name, 'user');
+    field_delete_instance($instance);
+    $field = field_info_field($field_name);
+    field_delete_field($field);
+  }
+}
+
+/**
+ * This function is called by hook_install(), in order
+ * to create custom fields about user preferencies for
+ * Q-Translate.
+ */
+function _qtrUser_create_userprofile_fields() {
+
+  // create a field and instance for 'field_translation_lng'
+  field_create_field(
+    array(
+      'field_name' => 'field_translation_lng',
+      'type' => 'list_text',
+      'cardinality' => 1,
+      'entity_types' => array('user'),
+    ));
+  field_create_instance(
+    array(
+      'field_name' => 'field_translation_lng',
+      'entity_type' => 'user',
+      'bundle' => 'user',
+      'label' => 'Translation Language',
+      'description' => 'The language of translations. You will help with the translations of this language (review existing translations or submit new ones).',
+      //'default_value' => array(array('value' => 'en')),
+      'settings' => array('user_register_form' => 1),
+      'widget' => array(
+        'weight' => '1',
+        'type' => 'options_select',
+        'module' => 'options',
+      ),
+    ));
+}

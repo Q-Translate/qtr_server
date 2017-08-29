@@ -3,7 +3,7 @@
 source /host/settings.sh
 
 ### make sure that we have the right git branch on the make file
-makefile="$CODE_DIR/build-qtr_server.make"
+makefile="$CODE_DIR/build-qtrserver.make"
 git_branch=$(git -C $CODE_DIR branch | cut -d' ' -f2)
 sed -i $makefile \
     -e "/qtr_server..download..branch/ c projects[qtr_server][download][branch] = $git_branch"

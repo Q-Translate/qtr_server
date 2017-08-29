@@ -1,5 +1,5 @@
-name = Qtr_server
-description = Drupal installation profile for Qtr_server.
+name = Q-Translate Server
+description = Drupal installation profile for Q-Translate Server.
 version = 1.x
 core = 7.x
 exclusive = TRUE
@@ -13,9 +13,9 @@ files[] = qtr_server.profile
 ;--------------------
 ; Core
 ;--------------------
-dependencies[] = book
+;dependencies[] = book
 dependencies[] = contact
-dependencies[] = blog
+;dependencies[] = blog
 dependencies[] = menu
 dependencies[] = path
 dependencies[] = taxonomy
@@ -26,7 +26,7 @@ dependencies[] = filter
 dependencies[] = image
 dependencies[] = locale
 dependencies[] = node
-dependencies[] = search
+;dependencies[] = search
 dependencies[] = system
 dependencies[] = toolbar
 dependencies[] = trigger
@@ -92,3 +92,29 @@ dependencies[] = phpmailer
 dependencies[] = mimemail
 dependencies[] = mimemail_action
 dependencies[] = mimemail_compress
+
+;--------------------
+; Misc
+;--------------------
+
+dependencies[] = menu_target
+dependencies[] = empty_front_page
+dependencies[] = jquery_update
+dependencies[] = nocurrent_pass
+dependencies[] = advuser
+
+;--------------------
+; Q-Translate Server
+;--------------------
+dependencies[] = qtrCore
+dependencies[] = qtrUser
+dependencies[] = qtrLanguages
+dependencies[] = qtrServices
+
+;dependencies[] = qtr_qtrServices
+;dependencies[] = qtr_qtr
+;dependencies[] = qtr_misc
+;dependencies[] = qtr_layout
+;dependencies[] = qtr_hybridauth
+;dependencies[] = qtr_captcha
+;dependencies[] = qtr_permissions

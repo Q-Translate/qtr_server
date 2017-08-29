@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the qtr_simplenews feature.
- */
-
-include_once 'qtr_simplenews.features.inc';

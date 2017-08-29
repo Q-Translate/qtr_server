@@ -1,0 +1,113 @@
+
+The script for importing contributions (translations and likes) is a
+bit complex, so it can be useful to try and explain some things about
+it.
+
+The aim of this script is to apply the latest changes from one
+Q-Translate site to another. If applied multiple times the result
+should still be the same. If changes from site *A* are applied to site
+*B* and then changes from site *B* are applied to site *A*, then both
+sites *A* and *B* at the end should have the same content (they should
+be synchronized).
+
+*Note:* Maybe replication features of MySQL can be used as well, to
+keep synchronized the tables of translations and likes. Maybe they are
+easier than this script. But I haven't tried them yet.
+
+* The lifecycle of translations and likes
+
+Translations and likes can be added, but can also be deleted. When
+they are deleted, instead of being erased, they are moved to the
+tables =translations_trash= and =likes_trash=, appending to them the
+time of deletion as well. This is useful for auditing, but also helps
+to keep track and sychronize deleted items as well.
+
+These are some of the usecases in the lifecycle of translations and
+likes:
+ + When the user likes another alternative translation for a string
+   (changes his like), the old like is moved to trash. Deletion time
+   is appended to it as well.
+ + When a translation is deleted, it is moved to trash, and its likes
+   are moved to trash as well.
+ + When a translation is changed (replaced by another translation),
+   this is the same as deleting the old translation, so the old
+   translation and its likes are moved to trash. But also a copy of
+   the old likes is created and assigned to the new translation (and
+   the users are notified about the translation change).
+
+For sync purposes, a translation is identified by its ID (tguid) and
+the timestamp of creation. A like is identified by
+(tguid,umail,ulng,time), where (umail,ulng) identifies the user that
+submitted it.
+
+
+* Some issues with such a synchronization
+
+Suppose that we are applying the changes from site *A* to site *B*. We
+want to move to the trash tables of *B* the items that are deleted on
+site *A*, and then to insert the new items from *A* on the tables of
+/translations/ and /likes/ on *B*.
+
+However there are some special cases that we should keep in mind in
+order to do this properly.
+
+ a. A like that is deleted on *A* is also deleted on *B*. To take care
+    of this, we should insert to the trash tables of *B* only those
+    deleted likes from *A* that are not already there (are not on
+    =likes_trash= of *B*).
+
+ b. A translation that is deleted on *A* is also deleted on *B*. Same
+    as for likes, we insert to =translations_trash= of *B* only those
+    that are not already there.
+
+ c. A like is added to a translation on *B*, but this translation is
+    deleted on *A*. We should find such likes (if they exist) and move
+    them to trash.
+
+ d. The same user, for the same string, has liked a translation on *A*
+    and a different one on *B*. This will create a conflict because
+    the user can like only one translation per string. So we can keep
+    the latest like, and move to trash the earlier likes.
+
+ e. The same user, for the same string, has suggested a translation on
+    *A* and a different one on *B*. We can keep both of these
+    translations and the user may decide later wich one to delete.
+
+ f. The like count that is stored on translation records related to
+    the likes that are changed, will become outdated after we apply
+    the changes. So it has to be updated.
+
+
+* The algorithm
+
+Suppose that we have the latest contributions (and deletions) from *A*
+in the tables: A_translations, A_translations_trash, A_likes,
+A_likes_trash. We want to apply (sync/merge) them on *B* to the
+tables: B_translations, B_translations_trash, B_likes, B_likes_trash.
+
+We can follow these steps:
+
+ 1. Find multiple likes on both A_likes and B_likes (see issue 'd'
+    above), and append to A_likes_trash all of them except for the
+    latest like.
+
+ 2. Find any likes on B_likes that belong to translations that are
+    deleted on *A* (A_translations_trash). This is related to issue
+    'c' above. Append these likes to A_likes_trash.
+
+ 3. Append the records of A_translations_trash to B_translations_trash
+    and A_likes_trash to B_likes_trash. Take care to copy only the
+    records that are not already there (according to the issues 'a'
+    and 'b' above).
+
+ 4. Append the records of A_translations to B_translations and records
+    of A_likes to B_likes.
+
+ 5. Remove from B_translations the records that are on
+    A_translations_trash and from B_likes the records that are on
+    B_likes_trash.
+
+ 6. For each translation related to likes on A_likes and A_likes_trash
+    recount and update the number of likes (issue 'f').
+
+

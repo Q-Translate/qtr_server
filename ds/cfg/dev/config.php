@@ -1,7 +1,7 @@
 #!/usr/local/bin/drush @bcl php-script
 <?php
    /**
-    * Modifies the configuration of a Qtr_server site
+    * Modifies the configuration of a Q-Translate site
     * that is installed for development. Not required,
     * but sometimes can be useful.
     *

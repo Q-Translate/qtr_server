@@ -1,0 +1,12 @@
+user_role:administrator
+user_role:translator
+user_role:contributor
+user_role:moderator
+variable:user_admin_role
+user_permission:qtranslate-like
+user_permission:qtranslate-translate
+user_permission:qtranslate-flag
+user_permission:qtranslate-import
+user_permission:qtranslate-resolve
+user_permission:qtranslate-admin
+rules_config:rules_assign_contributor_role

@@ -12,7 +12,7 @@ cat <<EOF > restore-private-vars.php
 <?php
 /**
  * Backup of sensitive/private variables, that are specific
- * only for this instance of Qtr_server. This file should
+ * only for this instance of Q-Translate. This file should
  * never be made public.
  */
 
@@ -22,6 +22,7 @@ EOF
 while read var_name
 do
     echo $var_name
+    echo -e "\n\n// $var_name" >> restore-private-vars.php
     $drush vget "$var_name" --exact --pipe >> restore-private-vars.php
 done < $(dirname $0)/private-vars.txt
 

@@ -70,36 +70,6 @@ function qtr_layout_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
-        'sharethis-sharethis_block' => array(
-          'module' => 'sharethis',
-          'delta' => 'sharethis_block',
-          'region' => 'content',
-          'weight' => '-9',
-        ),
-        'disqus-disqus_comments' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_comments',
-          'region' => 'content',
-          'weight' => '-8',
-        ),
-        'disqus-disqus_recent_comments' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_recent_comments',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'disqus-disqus_popular_threads' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_popular_threads',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'disqus-disqus_top_commenters' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_top_commenters',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
-        ),
       ),
     ),
   );
@@ -126,41 +96,11 @@ function qtr_layout_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'boxes-headerbox' => array(
+        'boxes-boxabout' => array(
           'module' => 'boxes',
-          'delta' => 'headerbox',
-          'region' => 'header',
-          'weight' => '-9',
-        ),
-        'system-main' => array(
-          'module' => 'system',
-          'delta' => 'main',
-          'region' => 'content',
+          'delta' => 'boxabout',
+          'region' => 'help',
           'weight' => '-10',
-        ),
-        'aggregator-feed-1' => array(
-          'module' => 'aggregator',
-          'delta' => 'feed-1',
-          'region' => 'sidebar_first',
-          'weight' => '-5',
-        ),
-        'disqus-disqus_recent_comments' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_recent_comments',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'disqus-disqus_popular_threads' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_popular_threads',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'disqus-disqus_top_commenters' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_top_commenters',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
         ),
       ),
     ),
@@ -171,75 +111,6 @@ function qtr_layout_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('Layout of the front page.');
   $export['frontpage'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'page';
-  $context->description = 'Layout of a page.';
-  $context->tag = '';
-  $context->conditions = array(
-    'path' => array(
-      'values' => array(
-        'contact' => 'contact',
-        'about' => 'about',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'system-main' => array(
-          'module' => 'system',
-          'delta' => 'main',
-          'region' => 'content',
-          'weight' => '-10',
-        ),
-        'sharethis-sharethis_block' => array(
-          'module' => 'sharethis',
-          'delta' => 'sharethis_block',
-          'region' => 'content',
-          'weight' => '-9',
-        ),
-        'disqus-disqus_comments' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_comments',
-          'region' => 'content',
-          'weight' => '-8',
-        ),
-        'aggregator-feed-1' => array(
-          'module' => 'aggregator',
-          'delta' => 'feed-1',
-          'region' => 'sidebar_first',
-          'weight' => '-24',
-        ),
-        'disqus-disqus_recent_comments' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_recent_comments',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'disqus-disqus_popular_threads' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_popular_threads',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'disqus-disqus_top_commenters' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_top_commenters',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('Layout of a page.');
-  $export['page'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */

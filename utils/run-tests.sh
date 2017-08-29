@@ -1,6 +1,6 @@
 #!/bin/bash
 ### Although the test script backups and restores the DB, it is better
-### to run it only on a test installation of Qtr_server.
+### to run it only on a test installation of Q-Translate Server.
 ### The output of the tests will be stored on the directory 'tests/'
 ### under the root drupal directory.
 ###

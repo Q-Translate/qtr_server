@@ -1,0 +1,345 @@
+<?php
+/**
+ * @file qtrCore.install
+ * Install and update functions for the module qtrCore.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function qtrCore_enable() {
+  mailsystem_set(array('qtrCore' => 'MimeMailSystem'));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function qtrCore_disable() {
+  mailsystem_clear(array('qtrCore' => 'MimeMailSystem'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function qtrCore_uninstall() {
+  // delete variables that were used for this module
+  $variables = array(
+    'qtr_languages',
+    'qtr_client',
+    'qtr_export_path',
+
+    'qtrCore_crontime',
+  );
+  foreach ($variables as $var) {
+    variable_del($var);
+  }
+}
+
+/**
+ * Implements hook_schema().
+ */
+function qtrCore_schema() {
+
+  // create a cache table for this module
+  $schema['cache_qtrCore'] = drupal_get_schema_unprocessed('system', 'cache');
+
+  // Chapters of the Quran.
+  $schema['qtr_chapters'] = array(
+    'description' => 'Chapters of the Quran.',
+    'fields' => array(
+      'cid' => array(
+        'description' => 'Number of chapter (from 1 up to 114).',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+      ),
+      'verses' => array(
+        'description' => 'Number of verses.',
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ),
+      'start' => array(
+        'description' => 'Index in the table of verses.',
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'description' => 'The name of the chapter.',
+        'type' => 'varchar',
+        'length' => '20',
+        'not null' => TRUE,
+      ),
+      'tname' => array(
+        'description' => 'Transliterated name.',
+        'type' => 'varchar',
+        'length' => '20',
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('cid'),
+    'indexes' => array(
+      'name' => array('name'),
+      'tname' => array('tname'),
+    ),
+  );
+
+  // Verses of the Quran.
+  $schema['qtr_verses'] = array(
+    'description' => 'Verses of the Quran.',
+    'fields' => array(
+      'vid' => array(
+        'description' => 'Verse id.',
+        'type' => 'serial',
+        'size' => 'small',
+        'not null' => TRUE,
+      ),
+      'cid' => array(
+        'description' => 'Number of chapter (from 1 up to 114).',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+      ),
+      'nr' => array(
+        'description' => 'Number of the verse.',
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ),
+      'verse' => array(
+        'description' => 'The text of the verse.',
+        'type' => 'varchar',
+        'length' => '2500',
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('vid'),
+    'indexes' => array(
+      'verse' => array(array('verse', 250)),
+    ),
+  );
+
+  // Translations for the verses of the Quran.
+  // For each verse there can be translations for different
+  // languages, and more than one translation for each language.
+  $schema['qtr_translations'] = array(
+    'description' => 'Translations of verses.',
+    'fields' => array(
+      'tguid' => array(
+        'description' => 'Globally Unique ID of the translation, defined as hash: SHA1(CONCAT(translation,lng,vid))',
+        'type' => 'char',
+        'length' => '40',
+        'not null' => TRUE,
+      ),
+      'vid' => array(
+        'description' => 'Verse id.',
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => TRUE,
+      ),
+      'lng' => array(
+        'description' => 'Language code (en, fr, sq_AL, etc.)',
+        'type' => 'varchar',
+        'length' => '5',
+        'not null' => TRUE,
+      ),
+      'translation' => array(
+        'description' => 'Translation of the verse.',
+        'type' => 'varchar',
+        'length' => '2500',
+        'not null' => TRUE,
+      ),
+      'count' => array(
+        'description' => 'Count of likes received so far. This can be counted on the table Likes, but for convenience is stored here as well.',
+        'type' => 'int',
+        'size' => 'small',
+        'not null' => FALSE,
+        'default' => 1,
+      ),
+      'umail' => array(
+        'description' => 'The email of the user that submitted this translation.',
+        'type' => 'varchar',
+        'length' => '250',
+        'not null' => TRUE,
+      ),
+      'ulng' => array(
+        'description' => 'The translation language of the user that submitted this translation.',
+        'type' => 'varchar',
+        'length' => '5',
+        'not null' => TRUE,
+      ),
+      'time' => array(
+        'description' => 'Time when the translation was entered into the database.',
+        'type' => 'datetime',
+        'mysql_type' => 'DATETIME',
+        'not null' => FALSE,
+      ),
+      'active' => array(
+        'description' => 'The active/deleted status of the record.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+    ),
+    'primary key' => array('tguid'),
+    'indexes' => array(
+      'time' => array('time'),
+      'umail' => array(array('umail', 20)),
+      'vid' => array('vid'),
+      'translation' => array(array('translation', 250)),
+    ),
+  );
+
+  // Translations that are deleted are saved on the trash table.
+  $schema['qtr_translations_trash'] = $schema['qtr_translations'];
+  $schema['qtr_translations_trash']['description'] =
+    'Translations that are deleted are saved on the trash table.';
+  $schema['qtr_translations_trash']['fields']['d_umail'] =
+    array(
+        'description' => 'The email of the user that deleted this translation.',
+        'type' => 'varchar',
+        'length' => '250',
+        'not null' => TRUE,
+    );
+  $schema['qtr_translations_trash']['fields']['d_ulng'] =
+    array(
+      'description' => 'The language of the user that deleted this translation.',
+      'type' => 'varchar',
+      'length' => '5',
+      'not null' => TRUE,
+    );
+  $schema['qtr_translations_trash']['fields']['d_time'] =
+    array(
+      'description' => 'Timestamp of the deletion time.',
+      'type' => 'datetime',
+      'mysql_type' => 'DATETIME',
+      'not null' => FALSE,
+    );
+  $schema['qtr_translations_trash']['primary key'] = array();
+  $schema['qtr_translations_trash']['indexes']['tguid'] = array('tguid');
+  $schema['qtr_translations_trash']['indexes']['d_time'] = array('d_time');
+  $schema['qtr_translations_trash']['indexes']['d_umail'] = array(array('d_umail', 10));
+
+  // Likes for each translation.
+  $schema['qtr_likes'] = array(
+    'description' => 'Likes for each translation.',
+    'fields' => array(
+      'lid' => array(
+        'description' => 'Internal numeric identifier for a like.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'tguid' => array(
+        'description' => 'Reference to the id of the translation which is liked.',
+        'type' => 'char',
+        'length' => '40',
+        'not null' => TRUE,
+      ),
+      'umail' => array(
+        'description' => 'The email of the user that submitted this translation.',
+        'type' => 'varchar',
+        'length' => '250',
+        'not null' => TRUE,
+      ),
+      'ulng' => array(
+        'description' => 'The translation language of the user that submitted this translation.',
+        'type' => 'varchar',
+        'length' => '5',
+        'not null' => TRUE,
+      ),
+      'time' => array(
+        'description' => 'Timestamp of the like time.',
+        'type' => 'datetime',
+        'mysql_type' => 'DATETIME',
+        'not null' => FALSE,
+      ),
+      'active' => array(
+        'description' => 'The active/deleted status of the record.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+    ),
+    'primary key' => array('lid'),
+    'indexes' => array(
+      'umail_ulng_tguid' => array(array('umail', 20), 'ulng', 'tguid'),
+      'tguid' => array('tguid'),
+      'time' => array('time'),
+      'umail' => array(array('umail', 20)),
+    ),
+  );
+
+  // Likes that are deleted are saved on the trash table.
+  $schema['qtr_likes_trash'] = $schema['qtr_likes'];
+  $schema['qtr_likes_trash']['description'] =
+    'Likes that are deleted are saved on the trash table.';
+  $schema['qtr_likes_trash']['fields']['lid']['type'] = 'int';
+  $schema['qtr_likes_trash']['fields']['d_time'] =
+    array(
+      'description' => 'Timestamp of the deletion time.',
+      'type' => 'datetime',
+      'mysql_type' => 'DATETIME',
+      'not null' => FALSE,
+    );
+  $schema['qtr_likes_trash']['primary key'] = array();
+  $schema['qtr_likes_trash']['indexes']['lid'] = array('lid');
+  $schema['qtr_likes_trash']['indexes']['d_time'] = array('d_time');
+
+  // Users that make translations/likes.
+  $schema['qtr_users'] = array(
+    'description' => 'Users that make translations/likes.',
+    'fields' => array(
+      'umail' => array(
+        'description' => 'The email of the user.',
+        'type' => 'varchar',
+        'length' => '250',
+        'not null' => TRUE,
+      ),
+      'ulng' => array(
+        'description' => 'The translation language of the user.',
+        'type' => 'varchar',
+        'length' => '5',
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'description' => 'The numeric identifier of the user.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'description' => 'Username.',
+        'type' => 'varchar',
+        'length' => '60',
+        'not null' => TRUE,
+      ),
+      'status' => array(
+        'description' => 'Disabled (0) or active (1).',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'points' => array(
+        'description' => 'Number of points rewarded for his activity.',
+        'type' => 'int',
+        'not null' => FALSE,
+        'default' => 0,
+      ),
+      'config' => array(
+        'description' => 'Serialized configuration variables.',
+        'type' => 'varchar',
+        'length' => '250',
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('umail', 'ulng', 'uid'),
+    'indexes' => array(
+      'name' => array('name'),
+    ),
+  );
+
+  return $schema;
+}

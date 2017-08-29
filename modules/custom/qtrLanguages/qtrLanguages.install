@@ -1,0 +1,111 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function qtrLanguages_schema() {
+
+  $schema = array();
+
+  $schema['qtrLanguages'] = array(
+    'description' => 'The base table for the Language entity',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Primary key of the Language entity',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'code' => array(
+        'description' => 'The code of the language (like: fr, de, etc.).',
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'description' => 'Language name.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+      'direction' => array(
+        'description' => 'LeftToRight=0, RightToLeft=1.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'code' => array('code'),
+    ),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function qtrLanguages_install() {
+  $languages = _qtrLanguages_language_list();
+  foreach ($languages as $lng => $language) {
+    $entity = entity_create('language', $language);
+    $entity->save();
+  }
+}
+
+/**
+ * Return a list of languages and their details.
+ */
+function _qtrLanguages_language_list() {
+  return array(
+    'en' => array(
+      'code' => 'en',
+      'name' => 'English',
+      'direction' => LANGUAGE_LTR,
+    ),
+    'fr' => array(
+      'code' => 'fr',
+      'name' => 'French',
+      'direction' => LANGUAGE_LTR,
+    ),
+    'de' => array(
+      'code' => 'de',
+      'name' => 'German',
+      'direction' => LANGUAGE_LTR,
+    ),
+    'it' => array(
+      'code' => 'it',
+      'name' => 'Italian',
+      'direction' => LANGUAGE_LTR,
+    ),
+    'es' => array(
+      'code' => 'es',
+      'name' => 'Spanish',
+      'direction' => LANGUAGE_LTR,
+    ),
+    'sq' => array(
+      'code' => 'sq',
+      'name' => 'Albanian',
+      'direction' => LANGUAGE_LTR,
+    ),
+    'bg' => array(
+      'code' => 'bg',
+      'name' => 'Bulgarian',
+      'direction' => LANGUAGE_LTR,
+    ),
+    'fi' => array(
+      'code' => 'fi',
+      'name' => 'Finnish',
+      'direction' => LANGUAGE_LTR,
+    ),
+    'tr' => array(
+      'code' => 'tr',
+      'name' => 'Turkish',
+      'direction' => LANGUAGE_LTR,
+    ),
+  );
+}

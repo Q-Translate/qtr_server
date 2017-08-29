@@ -6,7 +6,7 @@ source /host/settings.sh
 db_name=qtr
 db_user=qtr
 db_pass=qtr
-site_name="Qtr_server"
+site_name="Q-Translate"
 site_mail="$GMAIL_ADDRESS"
 account_name=admin
 account_pass="$ADMIN_PASS"

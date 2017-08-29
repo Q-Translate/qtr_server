@@ -45,7 +45,6 @@ projects[subpathauto] = 1.3
 ;;; User interface
 projects[context] = 3.7
 projects[views] = 3.17
-projects[homebox] = 2.0-rc1
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
 projects[wysiwyg] = 2.4
@@ -53,7 +52,6 @@ projects[wysiwyg] = 2.4
 ;;; Security
 projects[captcha] = 1.4
 projects[recaptcha] = 2.2
-projects[honeypot] = 1.22
 projects[user_restrictions] = 1.0
 
 ;;; Features
@@ -78,9 +76,9 @@ projects[boost] = 1.2
 
 ;;; Services and Social
 projects[google_analytics] = 2.3
-projects[drupalchat] = 1.7
-projects[simplenews] = 1.1
-projects[mass_contact] = 1.0
+;projects[drupalchat] = 1.7
+;projects[simplenews] = 1.1
+;projects[mass_contact] = 1.0
 
 ;--------------------
 ; Sending Emails
@@ -103,3 +101,31 @@ libraries[phpmailer][download][url] = https://github.com/PHPMailer/PHPMailer/arc
 libraries[tinymce][directory_name] = tinymce
 libraries[tinymce][download][type] = get
 libraries[tinymce][download][url] = https://github.com/tinymce/tinymce/archive/4.1.6.zip
+
+;--------------------
+; Misc
+;--------------------
+
+;projects[homebox] = 2.0-rc1
+projects[contact_forms] = 1.8
+projects[menu_target] = 1.6
+projects[empty_front_page] = 1.0
+projects[nocurrent_pass] = 1.0
+projects[honeypot] = 1.22
+projects[advuser] = 3.x-dev
+
+;--------------------
+; Web Services
+;--------------------
+
+projects[oauth2_loginprovider] = 1.11
+
+;--------------------
+; HybridAuth
+;--------------------
+
+projects[hybridauth] = 2.15
+
+libraries[hybridauth][directory_name] = hybridauth
+libraries[hybridauth][download][type] = get
+libraries[hybridauth][download][url] = https://github.com/hybridauth/hybridauth/archive/2.5.1.tar.gz

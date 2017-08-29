@@ -1,0 +1,6 @@
+name = Q-Translate Languages
+description = Languages supported by Q-Translate.
+package = Q-Translate
+
+core = 7.x
+dependencies[] = entity

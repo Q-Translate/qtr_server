@@ -1,0 +1,893 @@
+# #-#-#-#-#  general.pot (PROJECT VERSION)  #-#-#-#-#
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright 2014 NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  qtr_server.info: n/a
+#  install/config/gmailsmtp.php: n/a
+#  modules/custom/qtrCore/qtrCore.admin.inc: n/a
+#  modules/custom/qtrCore/qtrCore.menu.inc: n/a
+#  modules/custom/qtrCore/qtrCore.module: n/a
+#  modules/custom/qtrCore/qtrCore.info: n/a
+#  modules/custom/qtrServices/qtrServices.info: n/a
+#  modules/custom/qtrCore/drush/qtr-project-export.inc: n/a
+#  modules/custom/qtrCore/includes/project_callback.inc: n/a
+#  modules/custom/qtrCore/lib/fn/schedule/project_export.php: n/a
+#  modules/custom/qtrCore/drush/qtr-vote-import.inc: n/a
+#  modules/custom/qtrCore/includes/ajax_callbacks.inc: n/a
+#  modules/custom/qtrCore/includes/get_sguid.inc: n/a
+#  modules/custom/qtrCore/includes/mail_notifications.inc: n/a
+#  modules/custom/qtrCore/includes/vocabulary.inc: n/a
+#  modules/custom/qtrCore/includes/twitter.inc: n/a
+#  modules/custom/qtrCore/lib/fn/project/import.php: n/a
+#  modules/custom/qtrCore/lib/fn/schedule/project_import.php: n/a
+#  modules/custom/qtrServices/resources/translations.inc: n/a
+#  modules/custom/qtrCore/lib/fn/translation/add.php: n/a
+#  modules/custom/qtrCore/lib/fn/translation/del.php: n/a
+#  modules/custom/qtrCore/lib/fn/utils/get_emails.php: n/a
+#  modules/custom/qtrCore/lib/fn/vote/add.php: n/a
+#  modules/custom/qtrCore/lib/fn/vote/del.php: n/a
+#  modules/features/qtr_qtr/qtr_qtr.info: n/a
+#  modules/features/qtr_qtrServices/qtr_qtrServices.info: n/a
+#  modules/features/qtr_captcha/qtr_captcha.info: n/a
+#  modules/features/qtr_hybridauth/qtr_hybridauth.info: n/a
+#  modules/features/qtr_layout/qtr_layout.info: n/a
+#  modules/features/qtr_misc/qtr_misc.info: n/a
+#  modules/features/qtr_permissions/qtr_permissions.info: n/a
+#  modules/features/qtr_captcha/qtr_captcha.admin.inc: n/a
+#  modules/features/qtr_layout/qtr_layout.context.inc: n/a
+#  modules/features/qtr_layout/qtr_layout.features.field.inc: n/a
+#  modules/features/qtr_layout/qtr_layout.features.inc: n/a
+#  modules/features/qtr_layout/qtr_layout.features.menu_custom.inc: n/a
+#  modules/features/qtr_layout/qtr_layout.features.menu_links.inc: n/a
+#  modules/features/qtr_layout/qtr_layout.views_default.inc: n/a
+#  themes/bootstrap1/bootstrap1.info: n/a
+#
+# #-#-#-#-#  installer.pot (PROJECT VERSION)  #-#-#-#-#
+# $Id$
+#
+# LANGUAGE translation of Drupal (installer)
+# Copyright 2014 NAME <EMAIL@ADDRESS>
+# Generated from file: qtr_server.profile: n/a
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2016-08-02 13:41+0000\n"
+"PO-Revision-Date: 2014-10-28 05:19+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: qtr_server.info:0
+msgid "Q-Translate Server"
+msgstr ""
+
+#: qtr_server.info:0
+msgid "Drupal installation profile for Q-Translate Server."
+msgstr ""
+
+#: install/config/gmailsmtp.php:50
+msgid "Send e-mail to admin when a new user is registered"
+msgstr ""
+
+#: install/config/gmailsmtp.php:60
+msgid "Send e-mail to admin when user modifies his account"
+msgstr ""
+
+#: modules/custom/qtrCore/qtrCore.info:0
+msgid "Q-Translate Data"
+msgstr ""
+
+#: modules/custom/qtrCore/qtrCore.info:0
+msgid ""
+"Q-Translate Back-End, including data of PO files, strings, translations, "
+"likes, etc."
+msgstr ""
+
+#: modules/custom/qtrCore/qtrCore.info:0
+#: modules/custom/qtrLanguages/qtrLanguages.info:0
+#: modules/custom/qtrServices/qtrServices.info:0
+#: modules/custom/qtrUser/qtrUser.info:0
+msgid "Q-Translate"
+msgstr ""
+
+#: modules/custom/qtrCore/admin/core.inc:17
+msgid "Q-Translate Configuration"
+msgstr ""
+
+#: modules/custom/qtrCore/admin/core.inc:23
+msgid "Translation Languages"
+msgstr ""
+
+#: modules/custom/qtrCore/admin/core.inc:25
+msgid ""
+"The list of translation languages supported by the server. Enter a space "
+"separated list of language codes."
+msgstr ""
+
+#: modules/custom/qtrCore/admin/core.inc:31
+msgid "Client URL"
+msgstr ""
+
+#: modules/custom/qtrCore/admin/core.inc:33
+msgid "URL of the default client."
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:18
+msgid "Backup Q-Translate Data"
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:19
+msgid "Backup users, translations and likes, etc."
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:22;56
+msgid "Backup"
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:30
+msgid "Restote Q-Translate Data"
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:31
+msgid "Restore users, translations and likes, etc."
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:35
+msgid "Backup File"
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:36
+msgid "Upload a backup file."
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:40;61
+msgid "Restore"
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:112
+msgid "No file is uploaded."
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:117
+msgid "Error !error happened during file upload."
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:129
+msgid "There was an error while restoring the backup."
+msgstr ""
+
+#: modules/custom/qtrCore/admin/data.inc:133
+msgid "Backup restored successfully."
+msgstr ""
+
+#: modules/custom/qtrCore/callback/export.inc:50
+msgid "Error: Server is currently busy. Please try to export again later."
+msgstr ""
+
+#: modules/custom/qtrCore/callback/export.inc:57
+msgid "The language parameter is required"
+msgstr ""
+
+#: modules/custom/qtrCore/callback/export.inc:61
+#: modules/custom/qtrCore/drush/qtr-export.inc:47
+msgid "The language '!lng' does not exist."
+msgstr ""
+
+#: modules/custom/qtrCore/callback/export.inc:68
+#: modules/custom/qtrCore/drush/qtr-export.inc:54
+msgid "Chapter '!chapter' is out of range."
+msgstr ""
+
+#: modules/custom/qtrCore/callback/export.inc:76
+#: modules/custom/qtrCore/drush/qtr-export.inc:61
+msgid "Unknown export mode '!mode'."
+msgstr ""
+
+#: modules/custom/qtrCore/callback/export.inc:85
+msgid "No users given."
+msgstr ""
+
+#: modules/custom/qtrCore/callback/rss_feed.inc:33
+msgid "Latest translations on Q-Translate"
+msgstr ""
+
+#: modules/custom/qtrCore/callback/tweet.inc:36
+msgid "Error: No string found!"
+msgstr ""
+
+#: modules/custom/qtrCore/drush/qtr-import.inc:45
+msgid "File \"!file\" does not exist."
+msgstr ""
+
+#: modules/custom/qtrCore/drush/qtr-import.inc:62
+msgid "User \"!user\" has no rights for suggesting translations!"
+msgstr ""
+
+#: modules/custom/qtrCore/drush/qtr-import.inc:66
+msgid "User \"!user\" has no rights for submiting likes!"
+msgstr ""
+
+#: modules/custom/qtrCore/drush/qtr-import.inc:72
+msgid "Language \"!lng\" is not supported."
+msgstr ""
+
+#: modules/custom/qtrCore/drush/qtr-import.inc:78
+msgid "User \"!user\" cannot submit translations for the language \"!lng\""
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-author-on-translation-deletion.inc:10
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-translation-deletion.inc:10
+msgid "Deleted: !translation"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-author-on-translation-deletion.inc:14
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-moderators-for-wrong-translation.inc:17
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-that-import-is-done.inc:13
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-new-translation.inc:14
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-translation-change.inc:15
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-translation-deletion.inc:14
+#: modules/custom/qtrCore/lib/fn/email/msg/verse-to-be-reviewed.inc:23
+msgid "Greetings !username,"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-author-on-translation-deletion.inc:15
+msgid ""
+"A translation that you have submitted, has been deleted by a moderator.\n"
+"You can see the verse and the rest of translations at this link:"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-author-on-translation-deletion.inc:18
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-moderators-for-wrong-translation.inc:21
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-that-import-is-done.inc:16
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-new-translation.inc:21
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-translation-change.inc:25
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-translation-deletion.inc:18
+#: modules/custom/qtrCore/lib/fn/email/msg/verse-to-be-reviewed.inc:27
+msgid "Thanks"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-author-on-translation-deletion.inc:20
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-translation-deletion.inc:20
+msgid "Deleted Translation:"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-moderators-for-wrong-translation.inc:14
+msgid "Delete: !translation"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-moderators-for-wrong-translation.inc:18
+msgid ""
+"The user !user has tried to delete the translation below, but is not "
+"allowed.\n"
+"If you think he is right, you can delete it here: !url"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-moderators-for-wrong-translation.inc:23
+msgid "Translation:"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-that-import-is-done.inc:10
+msgid "Import of !filename"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-that-import-is-done.inc:14
+msgid "The import of the file '!filename', that you have requested, is done."
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-that-import-is-done.inc:19
+msgid "Output messages:"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-new-translation.inc:10
+msgid "New translation: !translation"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-new-translation.inc:16
+msgid ""
+"A new translation has been suggested for a verse\n"
+"that you have reviewed. If you think that the new\n"
+"translation is better than the one that you have\n"
+"supported, then you can support the new one at this link:"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-new-translation.inc:23
+msgid "Supported Translation:"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-new-translation.inc:24
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-translation-change.inc:28
+msgid "New Translation:"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-translation-change.inc:11
+msgid "Translation: !translation"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-translation-change.inc:16
+msgid ""
+"The following translation has been modified by its author.\n"
+"You are being notified because you have supported the old\n"
+"translation and your support now counts for the new version\n"
+"of the translation.\n"
+"\n"
+"If the new version of the translation is OK for you,\n"
+"then there is nothing you should do. Otherwise, you\n"
+"can change your support at this link:"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-translation-change.inc:27
+msgid "Old Translation:"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/notify-user-on-translation-deletion.inc:15
+msgid ""
+"A translation that you have supported, has been deleted by a moderator.\n"
+"You can see the verse and the rest of translations at this link:"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/verse-to-be-reviewed.inc:19
+msgid "Quran !chapter_id:!verse_nr"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/verse-to-be-reviewed.inc:24
+msgid ""
+"If you have time, please help to review the translation of the verse !"
+"chapter_id:!verse_nr"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/email/msg/verse-to-be-reviewed.inc:29
+msgid "Translations:"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/import/translations.php:52
+msgid "Chapter id !cid is not between 1 and 114."
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/import/translations.php:56
+msgid "Verse number !nr is not valid."
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/like/add.php:30
+msgid "The given translation does not exist."
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/like/add.php:42
+msgid "You cannot like the translations of language <strong>!lng</strong>"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/like/del.php:23
+msgid "No rights for deleting likes!"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/like/del.php:36
+msgid "Translation does not exist."
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/translation/add.php:38
+msgid "Not allowed to make translations for the language: !lng."
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/translation/add.php:44
+msgid "<New translation>"
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/translation/add.php:46
+msgid "The given translation is empty."
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/translation/add.php:58
+msgid "The given translation already exists."
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/translation/del.php:37
+msgid "Not allowed to delete translations of the language: !lng."
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/translation/del.php:61
+msgid ""
+"You do not have permission to delete this translation. However the admins "
+"will be notified about it."
+msgstr ""
+
+#: modules/custom/qtrCore/lib/fn/utils/get_emails.php:34
+msgid "The user '!username' does not exist."
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:11
+msgid "Language"
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:55;114
+msgid "Code"
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:62;120
+msgid "Name"
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:69
+msgid "Direction (LTR or RTL)"
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:82
+msgid "Update language"
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:82
+msgid "Save language"
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:95
+msgid "The language: @name has been saved."
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:107
+msgid "Language ID"
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:108
+msgid "The ID of the language."
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:115
+msgid "Code of the language."
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:121
+msgid "Name of the language."
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:126
+msgid "Direction"
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:127
+msgid "Direction (LTR/RTL) of the language."
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:152
+msgid "Code: "
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:158
+msgid "Name: "
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.module:164
+msgid "Direction: "
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.info:0
+msgid "Q-Translate Languages"
+msgstr ""
+
+#: modules/custom/qtrLanguages/qtrLanguages.info:0
+msgid "Languages supported by Q-Translate."
+msgstr ""
+
+#: modules/custom/qtrServices/qtrServices.info:0
+msgid "Q-Translate Web Services"
+msgstr ""
+
+#: modules/custom/qtrServices/qtrServices.info:0
+msgid "Web Services (API-s) that are offered by Q-Translate."
+msgstr ""
+
+#: modules/custom/qtrServices/resources/translations.inc:386
+msgid "No rights for making translations!"
+msgstr ""
+
+#: modules/custom/qtrServices/resources/translations.inc:392;569
+msgid "No rights for contributing to language <strong>!lng</strong>."
+msgstr ""
+
+#: modules/custom/qtrServices/resources/translations.inc:446
+msgid "No rights for submitting likes!"
+msgstr ""
+
+#: modules/custom/qtrServices/resources/translations.inc:503
+msgid "Action !action is not supported!"
+msgstr ""
+
+#: modules/custom/qtrServices/resources/translations.inc:560
+msgid "Only admins and translators can import translations."
+msgstr ""
+
+#: modules/custom/qtrServices/resources/translations.inc:592
+msgid "Failed to move uploaded file."
+msgstr ""
+
+#: modules/custom/qtrServices/resources/translations.inc:622
+msgid ""
+"Import of file '!filename' is scheduled. You will be notified by email when "
+"it is done."
+msgstr ""
+
+#: modules/custom/qtrServices/resources/translations.inc:510
+msgid "1 translation saved"
+msgid_plural "@count translations saved"
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/custom/qtrServices/resources/translations.inc:514
+msgid "1 like saved"
+msgid_plural "@count likes saved"
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/custom/qtrServices/resources/translations.inc:518
+msgid "1 translation deleted"
+msgid_plural "@count translations deleted"
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/custom/qtrUser/qtrUser.module:22
+msgid "Like translations."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:23
+msgid "Can submit likes for translation suggestions."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:26
+msgid "Suggest new translations."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:27
+msgid "Can submit new translation suggestions."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:30
+msgid "Flag translations."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:31
+msgid "Can flag translations as inaproppriate."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:34
+msgid "Import translations."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:35
+msgid "Can import to Q-Translate new translations."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:38
+msgid "Resolve issues."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:39
+msgid "Can resolve flag issues and other problems."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:42
+msgid "Administer Q-Translate."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:43
+msgid "Can perform administration tasks for Q-Translate."
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.module:94
+msgid "Authentication"
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.info:0
+msgid "Q-Translate User Profile"
+msgstr ""
+
+#: modules/custom/qtrUser/qtrUser.info:0
+msgid ""
+"User Profile for Q-Translate, with extra fields, hybridauth login and "
+"registration, etc."
+msgstr ""
+
+#: modules/custom/qtrUser/include/hybridauth.inc:32
+msgid "Translation Language"
+msgstr ""
+
+#: modules/custom/qtrUser/include/hybridauth.inc:33
+msgid ""
+"The language of translations. You will help with the translations of this "
+"language (review existing translations or submit new ones)."
+msgstr ""
+
+#: modules/features/qtr_captcha/qtr_captcha.admin.inc:33
+msgid "Site key"
+msgstr ""
+
+#: modules/features/qtr_captcha/qtr_captcha.admin.inc:36
+msgid ""
+"The site key given to you when you <a href=\"@url\">register for reCAPTCHA</"
+"a>."
+msgstr ""
+
+#: modules/features/qtr_captcha/qtr_captcha.admin.inc:43
+msgid "Secret key"
+msgstr ""
+
+#: modules/features/qtr_captcha/qtr_captcha.admin.inc:46
+msgid ""
+"The secret key given to you when you <a href=\"@url\">register for "
+"reCAPTCHA</a>."
+msgstr ""
+
+#: modules/features/qtr_captcha/qtr_captcha.info:0
+msgid "qtr_captcha"
+msgstr ""
+
+#: modules/features/qtr_captcha/qtr_captcha.info:0
+#: modules/features/qtr_googleanalytics/qtr_googleanalytics.info:0
+#: modules/features/qtr_hybridauth/qtr_hybridauth.info:0
+#: modules/features/qtr_layout/qtr_layout.info:0
+#: modules/features/qtr_misc/qtr_misc.info:0
+#: modules/features/qtr_permissions/qtr_permissions.info:0
+#: modules/features/qtr_qtr/qtr_qtr.info:0
+#: modules/features/qtr_qtrServices/qtr_qtrServices.info:0
+msgid "Features"
+msgstr ""
+
+#: modules/features/qtr_googleanalytics/qtr_googleanalytics.admin.inc:34
+msgid "Web Property ID"
+msgstr ""
+
+#: modules/features/qtr_googleanalytics/qtr_googleanalytics.admin.inc:40
+msgid ""
+"This ID is unique to each site you want to track separately, and is in the "
+"form of UA-xxxxxxx-yy. To get a Web Property ID, <a href=\"@analytics"
+"\">register your site with Google Analytics</a>, or if you already have "
+"registered your site, go to your Google Analytics Settings page to see the "
+"ID next to every site profile. <a href=\"@webpropertyid\">Find more "
+"information in the documentation</a>."
+msgstr ""
+
+#: modules/features/qtr_googleanalytics/qtr_googleanalytics.info:0
+msgid "qtr_googleanalytics"
+msgstr ""
+
+#: modules/features/qtr_hybridauth/qtr_hybridauth.info:0
+msgid "qtr_hybridauth"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.context.inc:42
+msgid "Display development block to admin."
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.context.inc:80
+msgid "Pages, blogs, books, etc."
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.context.inc:112
+msgid "Layout of the front page."
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.field_instance.inc:284
+msgid "Body"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.field_instance.inc:285
+msgid "Enter a comma-separated list of words to describe your content."
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.field_instance.inc:286
+msgid "Image"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.field_instance.inc:287
+msgid "Tags"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.field_instance.inc:288
+msgid "Upload an image to go with this article."
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.inc:35
+msgid "Article"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.inc:37
+msgid ""
+"Use <em>articles</em> for time-sensitive content like news, press releases "
+"or blog posts."
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.inc:39;47;55
+msgid "Title"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.inc:43
+msgid "Book page"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.inc:45
+msgid ""
+"<em>Books</em> have a built-in hierarchical navigation. Use for handbooks or "
+"tutorials."
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.inc:51
+msgid "Basic page"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.inc:53
+msgid ""
+"Use <em>basic pages</em> for your static content, such as an 'About us' page."
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.menu_custom.inc:21
+msgid "Main menu"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.menu_custom.inc:22
+msgid ""
+"The <em>Main</em> menu is used on many sites to show the major sections of "
+"the site, often in a top navigation bar."
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.menu_links.inc:142
+msgid "API Examples"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.menu_links.inc:143
+msgid "API Reference"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.menu_links.inc:144
+msgid "About"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.menu_links.inc:145
+msgid "Contact"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.menu_links.inc:146
+msgid "Home"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.features.menu_links.inc:147
+msgid "Projects"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:84
+msgid "Master"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:85
+msgid "more"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:86
+msgid "Apply"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:87
+msgid "Reset"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:88
+msgid "Sort by"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:89
+msgid "Asc"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:90
+msgid "Desc"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:91
+msgid "Items per page"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:92
+msgid "- All -"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:93
+msgid "Offset"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:94
+msgid "« first"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:95
+msgid "‹ previous"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:96
+msgid "next ›"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:97
+msgid "last »"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.views_default.inc:98
+msgid "Page"
+msgstr ""
+
+#: modules/features/qtr_layout/qtr_layout.info:0
+msgid "qtr_layout"
+msgstr ""
+
+#: modules/features/qtr_misc/qtr_misc.info:0
+msgid "qtr_misc"
+msgstr ""
+
+#: modules/features/qtr_permissions/qtr_permissions.info:0
+msgid "qtr_permissions"
+msgstr ""
+
+#: modules/features/qtr_qtr/qtr_qtr.info:0
+msgid "qtr_qtr"
+msgstr ""
+
+#: modules/features/qtr_qtrServices/qtr_qtrServices.info:0
+msgid "qtr_qtrServices"
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "qtr_server"
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "A Bootstrap Sub-theme for Q-Translate Server."
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "Navigation"
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "Top Bar"
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "Highlighted"
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "Help"
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "Content"
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "Primary"
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "Secondary"
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "Footer"
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "Page top"
+msgstr ""
+
+#: themes/qtr_server/qtr_server.info:0
+msgid "Page bottom"
+msgstr ""
+
+#: qtr_server.profile:29
+msgid "Mail Settings"
+msgstr ""
+
+#: qtr_server.profile:35
+msgid "Q-Translate Server Settings"
+msgstr ""

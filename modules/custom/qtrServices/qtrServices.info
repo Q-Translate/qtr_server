@@ -1,0 +1,12 @@
+name = Q-Translate Web Services
+description = Web Services (API-s) that are offered by Q-Translate.
+package = Q-Translate
+core = 7.x
+
+dependencies[] = qtrCore
+dependencies[] = services
+dependencies[] = rest_server
+dependencies[] = oauth2_loginprovider
+
+;files[] = qtrServices.test
+;configure = admin/config/qtr

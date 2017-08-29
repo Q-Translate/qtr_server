@@ -50,7 +50,7 @@
 
   For example, these are the components that I have selected for the
   /layout/ feature (which is supposed to re-construct automatically
-  the layout and look of a freshly installed Qtr_server site):
+  the layout and look of a freshly installed Q-Translate site):
   #+BEGIN_EXAMPLE
   variable:theme_qtr_server_settings
   variable:theme_default
@@ -88,14 +88,12 @@
   It creates a feature on the directory:
   ~/var/www/qtr_dev/profiles/qtr_server/modules/features/qtr_layout/~
 
-  Other features that I have created are: /qtr_disqus/,
-  /qtr_invite/, /qtr_sharethis/,
-  /qtr_captcha/, /qtr_drupalchat/,
-  /qtr_janrain/, /qtr_simplenews/,
-  /qtr_mass_contact/, /qtr_googleanalytics/, etc.  In
-  order to recreate them easily, the script =create-features.sh= can
-  be used. It will create a feature for each list of components that
-  is on the directory ~components/~.
+  Other features that I have created are: /qtr_disqus/, /qtr_invite/,
+  /qtr_captcha/, /qtr_hybridauth/, /qtr_simplenews/,
+  /qtr_mass_contact/, /qtr_googleanalytics/, etc.  In order to
+  recreate them easily, the script =create-features.sh= can be
+  used. It will create a feature for each list of components that is
+  on the directory ~components/~.
 
   The file ~create-features.sh~ has a content like this:
   #+BEGIN_EXAMPLE
@@ -224,18 +222,17 @@
   module.
 
   Some of these modules are just wrappers to external API services,
-  like disqus, sharethis, janrain, recaptcha, googleanalytics,
-  etc. Usually they need some API keys or any other private attributes
-  that are different from site to site. We cannot save these private
-  attributes on the feature, because they are specific for each
-  different site. But we would like to offer the
-  administrator/maintainer of the (Qtr_server) application an easy
-  way to manage them, without having to search up and down among a
-  huge number of configuration options available to the Drupal
-  admin. In order to do this, I have customized the automatically
-  generated features, taking advantage of the fact that they are just
-  Drupal modules, and anything that works for Drupal modules works for
-  them too.
+  like disqus, hybridauth, recaptcha, googleanalytics, etc. Usually
+  they need some API keys or any other private attributes that are
+  different from site to site. We cannot save these private attributes
+  on the feature, because they are specific for each different
+  site. But we would like to offer the administrator/maintainer of the
+  (Q-Translate) application an easy way to manage them, without
+  having to search up and down among a huge number of configuration
+  options available to the Drupal admin. In order to do this, I have
+  customized the automatically generated features, taking advantage of
+  the fact that they are just Drupal modules, and anything that works
+  for Drupal modules works for them too.
 
   For example, for the feature /qtr_googleanalytics/, I have
   added this line on ~qtr_googleanalytics.module~:
@@ -261,7 +258,7 @@
       'description'      => 'Private GoogleAnalytics settings.',
       'page callback'    => 'drupal_get_form',
       'page arguments'   => array('qtr_googleanalytics_config'),
-      'access callback'  => TRUE,
+      'access arguments' => array('qtranslate-admin'),
     );
 
     return $items;
@@ -302,7 +299,7 @@
   #+END_EXAMPLE
 
   It creates a configuration page for GoogleAnalytics under the
-  section of Qtr_server configurations. This admin/config page
+  section of Q-Translate configurations. This admin/config page
   allows the site administrator to set quickly and easily the /account
   ID/ of GoogleAnalytics. All this is just normal Drupal stuff, which
   can be done for any Drupal module. Nothing specially related to
@@ -332,10 +329,6 @@
   disqus_userapikey
   disqus_publickey
   disqus_secretkey
-  sharethis_publisherID
-  sharethis_twitter_handle
-  sharethis_twitter_suffix
-  rpx_apikey
   simplenews_from_address
   simplenews_test_address
   mass_contact_default_sender_email
@@ -359,7 +352,7 @@
   <?php
   /**
    * Backup of sensitive/private variables, that are specific
-   * only for this instance of Qtr_server. This file should
+   * only for this instance of Q-Translate. This file should
    * never be made public.
    */
 

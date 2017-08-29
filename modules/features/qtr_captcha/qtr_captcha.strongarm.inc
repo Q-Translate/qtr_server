@@ -70,7 +70,7 @@ function qtr_captcha_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'captcha_persistence';
-  $strongarm->value = '0';
+  $strongarm->value = '3';
   $export['captcha_persistence'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -90,9 +90,23 @@ function qtr_captcha_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'recaptcha_secret_key';
+  $strongarm->value = '6LdXCw4TAAAAACff-iKvJeRyOOrf-qbcvDtY7qJo';
+  $export['recaptcha_secret_key'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'recaptcha_secure_connection';
   $strongarm->value = 1;
   $export['recaptcha_secure_connection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'recaptcha_site_key';
+  $strongarm->value = '6LdXCw4TAAAAAA-RiiUriSx_XJX_kcSgAuvUuFMr';
+  $export['recaptcha_site_key'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

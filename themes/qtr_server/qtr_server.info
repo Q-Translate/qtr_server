@@ -1,5 +1,5 @@
 name = qtr_server
-description = A Bootstrap Subtheme for Qtr_server.
+description = A Bootstrap Subtheme for Q-Translate Server.
 core = 7.x
 base theme = bootstrap
 

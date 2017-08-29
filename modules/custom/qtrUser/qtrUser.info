@@ -1,0 +1,15 @@
+name = Q-Translate User Profile
+description = User Profile for Q-Translate, with extra fields, hybridauth login and registration, etc.
+package = Q-Translate
+core = 7.x
+
+dependencies[] = qtrCore
+dependencies[] = edit_profile
+dependencies[] = hybridauth
+dependencies[] = field_sql_storage
+dependencies[] = list
+dependencies[] = options
+dependencies[] = text
+dependencies[] = image
+dependencies[] = number
+dependencies[] = options

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the qtr_misc feature.
+ */
+
+include_once 'qtr_misc.features.inc';
