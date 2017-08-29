@@ -35,7 +35,7 @@ cp -a libraries/bootstrap themes/qtr_server/
 cp libraries/bootstrap/less/variables.less themes/qtr_server/less/
 
 ### copy hybridauth provider GitHub.php to the right place
-cd $DRUPAL_DIR/profiles/btr_server/libraries/hybridauth/
+cd $DRUPAL_DIR/profiles/qtr_server/libraries/hybridauth/
 cp additional-providers/hybridauth-github/Providers/GitHub.php \
    hybridauth/Hybrid/Providers/
 
