@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the qtr_hybridauth feature.
+ */
+
+include_once 'qtr_hybridauth.features.inc';

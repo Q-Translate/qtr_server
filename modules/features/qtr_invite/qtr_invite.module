@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the qtr_invite feature.
+ */
+
+include_once 'qtr_invite.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the qtr_layout feature.
+ */
+
+include_once 'qtr_layout.features.inc';

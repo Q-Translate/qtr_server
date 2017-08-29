@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the qtr_mass_contact feature.
+ */
+
+include_once 'qtr_mass_contact.features.inc';

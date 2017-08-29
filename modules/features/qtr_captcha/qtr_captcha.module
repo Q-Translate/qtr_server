@@ -1,0 +1,8 @@
+<?php
+/**
+ * @file
+ * Code for the qtr_captcha feature.
+ */
+
+include_once 'qtr_captcha.admin.inc';
+include_once 'qtr_captcha.features.inc';
