@@ -15,7 +15,8 @@ cmd_create() {
         --mount type=bind,src=$(pwd)/var-www,dst=/var/www \
         --workdir /var/www \
         --env CODE_DIR=/usr/local/src/qtr_server \
-        --env DRUPAL_DIR=/var/www/qtr
+        --env DRUPAL_DIR=/var/www/qtr \
+        "$@"    # accept additional options, e.g.: -p 2201:22
 
     rm -f qtr_server
     ln -s var-www/qtr/profiles/qtr_server .
