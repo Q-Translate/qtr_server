@@ -28,6 +28,8 @@ cat <<EOF > /etc/apache2/sites-available/qtr.conf
         </FilesMatch>
 </VirtualHost>
 EOF
+### we need to refer to this apache2 config by the name "$DOMAIN.conf" as well
+ln /etc/apache2/sites-available/{qtr,$DOMAIN}.conf
 
 cat <<EOF > /etc/apache2/conf-available/api-examples-php.conf
 Alias /api-examples-php /var/www/api-examples-php

@@ -11,11 +11,17 @@ domain=${domain:-example.org}
 echo $new_domain > /etc/hostname
 
 ### update apache2 config files
-for file in $(ls /etc/apache2/sites-available/qtr*); do
+cd /etc/apache2/sites-available/
+for file in $(ls qtr*.conf); do
     sed -i $file \
         -e "/ServerName/ s/$domain/$new_domain/" \
         -e "/RedirectPermanent/ s/$domain/$new_domain/"
 done
+for file in $(ls *$domain.conf); do
+    file1=${file//$domain/$new_domain}
+    mv $file $file1
+done
+cd -
 
 ### update drupal  settings
 for file in $(ls /var/www/qtr*/sites/default/settings.php); do
