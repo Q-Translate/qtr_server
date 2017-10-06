@@ -5,25 +5,18 @@
 source /host/settings.sh
 
 ### database and user settings
-db_name=qtr_data
-db_user=qtr_data
-db_pass=qtr_data
+dbdata=${DBNAME}_data
 
 ### create the database and user
-mysql="mysql --defaults-file=/etc/mysql/debian.cnf -B"
-$mysql -e "
-    DROP DATABASE IF EXISTS $db_name;
-    CREATE DATABASE $db_name;
-    GRANT ALL ON $db_name.* TO $db_user@localhost IDENTIFIED BY '$db_pass';
-"
+mysql="mysql -B --host=$DBHOST --port=$DBPORT --user=$DBUSER --password=$DBPASS"
 
-### copy the tables of qtr_data to the new database
-tables=$($mysql -D qtr -e "SHOW TABLES" | grep '^qtr_' )
+### copy the data tables to the new database
+tables=$($mysql -D $DBNAME -e "SHOW TABLES" | grep '^qtr_' )
 for table in $tables; do
     echo "Copy: $table"
     $mysql -e "
-        CREATE TABLE $db_name.$table LIKE qtr.$table;
-        INSERT INTO $db_name.$table SELECT * FROM qtr.$table;
+        CREATE TABLE $dbdata.$table LIKE $DBNAME.$table;
+        INSERT INTO $dbdata.$table SELECT * FROM $DBNAME.$table;
     "
 done
 
@@ -42,11 +35,11 @@ cat << EOF >> $drupal_settings
  * same translation database.
  */
 \$databases['qtr_db']['default'] = array (
-    'database' => '$db_name',
-    'username' => '$db_user',
-    'password' => '$db_pass',
-    'host' => 'localhost',
-    'port' => '',
+    'database' => '$dbdata',
+    'username' => '$DBUSER',
+    'password' => '$DBPASS',
+    'host' => '$DBHOST',
+    'port' => '$DBPORT',
     'driver' => 'mysql',
     'prefix' => '',
 );

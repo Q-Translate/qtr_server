@@ -14,7 +14,8 @@ if [ "$1" = '' ]; then usage; fi
 file_gz=$1
 
 ### mysqldump options
-mysql="mysql --defaults-file=/etc/mysql/debian.cnf"
+source /host/settings.sh
+mysql="mysql --host=$DBHOST --port=$DBPORT --user=$DBUSER --password='$DBPASS'"
 
 ### create a temporary database
 A=data_import
@@ -29,7 +30,7 @@ file_sql=${file_gz%.gz}
 $mysql -D $A < $file_sql
 
 ### get the name of database
-B=${QTR_DATA:-qtr_data}
+B=${QTR_DATA:-${DBNAME}_data}
 
 ### Find multiple likes on both A_likes and B_likes and append to
 ### A_likes_trash all of them except for the latest like.
