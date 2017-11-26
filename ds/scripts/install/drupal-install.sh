@@ -31,7 +31,7 @@ for lng in $LANGUAGES; do
     $drush language-add $lng
 done
 
-### fix tha DB schema and install some test data
+### fix the DB schema and install some test data
 $DRUPAL_DIR/profiles/qtr_server/modules/custom/qtrCore/data/install.sh
 
 ### set the directory for uploads

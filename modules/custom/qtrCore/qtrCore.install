@@ -186,7 +186,7 @@ function qtrCore_schema() {
     'primary key' => array('tguid'),
     'indexes' => array(
       'time' => array('time'),
-      'umail' => array(array('umail', 20)),
+      'umail' => array(array('umail')),
       'vid' => array('vid'),
       'translation' => array(array('translation', 250)),
     ),
@@ -220,7 +220,7 @@ function qtrCore_schema() {
   $schema['qtr_translations_trash']['primary key'] = array();
   $schema['qtr_translations_trash']['indexes']['tguid'] = array('tguid');
   $schema['qtr_translations_trash']['indexes']['d_time'] = array('d_time');
-  $schema['qtr_translations_trash']['indexes']['d_umail'] = array(array('d_umail', 10));
+  $schema['qtr_translations_trash']['indexes']['d_umail'] = array(array('d_umail'));
 
   // Likes for each translation.
   $schema['qtr_likes'] = array(
@@ -265,10 +265,10 @@ function qtrCore_schema() {
     ),
     'primary key' => array('lid'),
     'indexes' => array(
-      'umail_ulng_tguid' => array(array('umail', 20), 'ulng', 'tguid'),
+      'umail_ulng_tguid' => array(array('umail'), 'ulng', 'tguid'),
       'tguid' => array('tguid'),
       'time' => array('time'),
-      'umail' => array(array('umail', 20)),
+      'umail' => array(array('umail')),
     ),
   );
 
