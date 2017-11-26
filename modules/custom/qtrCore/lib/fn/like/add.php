@@ -46,7 +46,7 @@ function like_add($tguid, $uid = NULL, $save_time = TRUE) {
 
   // Clean any previous like.
   include_once(dirname(__FILE__) . '/del_previous.php');
-  $nr = _like_del_previous($tguid, $umail, $trans->vid, $trans->lng);
+  $nr = _like_del_previous($tguid, $umail, $trans->vid, $ulng);
 
   // Add the like.
   $fields = array(
