@@ -30,7 +30,7 @@ CREATE TABLE `qtr_translations` (
   KEY `umail` (`umail`),
   KEY `vid` (`vid`),
   FULLTEXT KEY `translation` (`translation`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Translations of the verses.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Translations of the verses.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `qtr_translations_trash`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -54,7 +54,7 @@ CREATE TABLE `qtr_translations_trash` (
   KEY `d_umail` (`d_umail`),
   KEY `tguid` (`tguid`),
   FULLTEXT KEY `translation_text` (`translation`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Translations that are deleted are saved on the trash table.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Translations that are deleted are saved on the trash table.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `qtr_users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -82,7 +82,7 @@ CREATE TABLE `qtr_verses` (
   PRIMARY KEY (`vid`),
   KEY `cid` (`cid`),
   FULLTEXT KEY `verse` (`verse`)
-) ENGINE=MyISAM AUTO_INCREMENT=6237 DEFAULT CHARSET=utf8 COMMENT='Verses of the Quran.';
+) ENGINE=InnoDB AUTO_INCREMENT=6237 DEFAULT CHARSET=utf8 COMMENT='Verses of the Quran.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `qtr_likes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
