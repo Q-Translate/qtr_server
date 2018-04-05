@@ -8,7 +8,7 @@ backup_dir="/tmp/$backup"
 mkdir -p $backup_dir/
 
 ### set mysqldump options
-sql_connect=$(drush @qtr sql-connect --database=qtr_db | sed -e 's/^mysql //' -e 's/--database=/--databases /')
+sql_connect=$(drush @qtr sql-connect --database=qtr_data | sed -e 's/^mysql //' -e 's/--database=/--databases /')
 mysqldump="mysqldump $sql_connect --skip-add-drop-table --replace"
 
 ### backup translations

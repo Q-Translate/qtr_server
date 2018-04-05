@@ -34,7 +34,7 @@ cat << EOF >> $drupal_settings
  * (testing new drupal features) can connect to the
  * same translation database.
  */
-\$databases['qtr_db']['default'] = array (
+\$databases['qtr_data']['default'] = array (
     'database' => '$dbdata',
     'username' => '$DBUSER',
     'password' => '$DBPASS',

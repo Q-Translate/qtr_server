@@ -22,7 +22,7 @@ backup_dir=$(ls -dt /tmp/qtr-backup-*/ | head -n 1)
 ### execute the sql scripts of the backup
 drush @qcl sql-query --file=$backup_dir/qcl.sql
 drush @qtr sql-query --file=$backup_dir/qtr.sql
-$(drush @qtr sql-connect --database=qtr_db) < $backup_dir/qtr_data.sql
+$(drush @qtr sql-connect --database=qtr_data) < $backup_dir/qtr_data.sql
 
 ### cleanup
 rm -rf $backup_dir

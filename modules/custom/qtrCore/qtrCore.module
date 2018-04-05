@@ -5,11 +5,11 @@
  */
 
 // Define the database of Q-Translate.
-if (isset($GLOBALS['databases']['qtr_db']['default'])) {
-  define('QTR_DB', 'qtr_db');
+if (isset($GLOBALS['databases']['qtr_data']['default'])) {
+  define('QTR_DATA', 'qtr_data');
  }
  else {
-   define('QTR_DB', 'default');
+   define('QTR_DATA', 'default');
  }
 
 require_once(dirname(__FILE__) . '/qtrCore.menu.inc');
