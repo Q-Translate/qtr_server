@@ -13,9 +13,9 @@ function usage {
 if [ "$1" = '' ]; then usage; fi
 file_gz=$1
 
+### mysql options
+mysql=$(drush @qtr sql-connect)
 ### mysqldump options
-source /host/settings.sh
-mysql="mysql --host=$DBHOST --port=$DBPORT --user=$DBUSER --password='$DBPASS'"
 
 ### create a temporary database
 A=data_import
@@ -30,7 +30,7 @@ file_sql=${file_gz%.gz}
 $mysql -D $A < $file_sql
 
 ### get the name of database
-B=${QTR_DATA:-${DBNAME}_data}
+B=$(drush sql-connect --database=qtr_data | tr ' ' "\n" | grep -e '--database' | cut -d= -f2)
 
 ### Find multiple likes on both A_likes and B_likes and append to
 ### A_likes_trash all of them except for the latest like.

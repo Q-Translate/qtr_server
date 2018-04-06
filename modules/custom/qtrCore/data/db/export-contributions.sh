@@ -2,14 +2,11 @@
 ### Export contributions from users (translations and likes)
 ### since a certain date.
 
-source /host/settings.sh
-
 ### get the arguments
 from_date=${1:-'0000-00-00'}    # in format YYYY-MM-DD
 
-### mysqldump default options
-dbname=${QTR_DATA:-${DBNAME}_data}
-mysqldump="mysqldump --host=$DBHOST --port=$DBPORT --user=$DBUSER --password='$DBPASS' --databases $dbname"
+### set mysqldump options
+mysqldump=$(drush @qtr sql-connect --database=qtr_data | sed -e 's/^mysql /mysqldump /' -e 's/--database=/--databases /')
 
 ### get the dump filename
 date1=${from_date//-/}
