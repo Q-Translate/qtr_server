@@ -22,6 +22,9 @@ restore_config() {
     # restore private variables
     drush @qtr php-script $(pwd)/restore-private-vars-qtr.php
     drush @qtr_dev php-script $(pwd)/restore-private-vars-qtr-dev.php
+
+    # twitter config
+    [[ -f trc ]] && cp trc /home/twitter/.trc
 }
 
 

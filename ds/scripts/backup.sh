@@ -57,6 +57,9 @@ backup_config() {
     dir=/var/www/qtr_dev/profiles/qtr_server/modules/features
     $dir/save-private-vars.sh @qtr_dev
     mv restore-private-vars.php restore-private-vars-qtr-dev.php
+
+    # twitter config
+    [[ -f /home/twitter/.trc ]] && cp /home/twitter/.trc trc
 }
 
 
