@@ -45,13 +45,13 @@ projects[subpathauto] = 1.3
 
 ;;; User interface
 projects[context] = 3.7
-projects[views] = 3.18
+projects[views] = 3.19
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
 projects[wysiwyg] = 2.4
 
 ;;; Security
-projects[captcha] = 1.4
+projects[captcha] = 1.5
 projects[recaptcha] = 2.2
 projects[user_restrictions] = 1.0
 projects[user_restrictions][patch][2856139] = https://www.drupal.org/files/issues/variable_passed_by_reference-2856139-1.patch
@@ -88,7 +88,7 @@ projects[google_analytics] = 2.3
 
 projects[mailsystem] = 2.34
 projects[mimemail] = 1.0
-projects[reroute_email] = 1.2
+projects[reroute_email] = 1.3
 
 projects[phpmailer] = 3.0-beta4
 
