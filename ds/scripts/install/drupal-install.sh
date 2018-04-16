@@ -50,6 +50,9 @@ $drush features-revert qtr_misc
 $drush pm-enable qtr_layout
 $drush features-revert qtr_layout
 
+$drush pm-enable bootstrap
+$drush pm-enable qtr_server
+
 $drush pm-enable qtr_hybridauth
 $drush features-revert qtr_hybridauth
 
