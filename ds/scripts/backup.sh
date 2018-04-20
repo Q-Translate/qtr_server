@@ -70,3 +70,6 @@ cd /host/$backup
 # make the backup
 backup_data
 backup_config
+
+# custom backup script
+[[ -f /host/backup.sh ]] && source /host/backup.sh
