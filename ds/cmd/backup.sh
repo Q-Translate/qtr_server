@@ -40,7 +40,7 @@ _make_app_backup() {
     ds exec drush @$app cache-clear all
 
     # dump the content of the databases
-    ds exec drush @$app sql-dump --ordered-dump \
+    ds exec drush @$app sql-dump \
            --result-file=/host/$backup/$app.sql
 
     # copy app files to the backup dir
@@ -67,14 +67,8 @@ _make_full_backup() {
     # clear the cache
     ds exec drush --yes @local_qtr cache-clear all
 
-    # dump the content of the databases
-    ds exec drush @qtr sql-dump --ordered-dump \
-       --result-file=/host/$backup/qtr.sql
-    ds exec drush @qtr sql-dump --ordered-dump \
-       --database=qtr_data \
-       --result-file=/host/$backup/qtr_data.sql
-    ds exec drush @qtr_dev sql-dump --ordered-dump \
-       --result-file=/host/$backup/qtr_dev.sql
+    # make a full backup of the databases
+    ds mariadb backup $backup/qtr-databases.tgz qtr qtr_dev qtr_data
 
     # copy app files to the backup dir
     cp -a var-www/{qtr,qtr_dev,downloads} $backup/

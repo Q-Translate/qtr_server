@@ -67,17 +67,8 @@ _make_full_restore() {
     # extract the backup archive
     tar --extract --gunzip --preserve-permissions --file=$file
 
-    # restore the content of the databases
-    ds exec drush @qtr sql-drop --yes
-    ds exec drush @qtr sql-query \
-       --file=/host/$backup/qtr.sql
-    ds exec drush @qtr_dev sql-drop --yes
-    ds exec drush @qtr_dev sql-query \
-       --file=/host/$backup/qtr_dev.sql
-    ds exec drush @qtr sql-drop --database=qtr_data --yes
-    ds exec drush @qtr sql-query \
-       --database=qtr_data \
-       --file=/host/$backup/qtr_data.sql
+    # restore the databases
+    ds mariadb restore $backup/qtr-databases.tgz
 
     # restore application files
     rm -rf var-www/{qtr,qtr_dev,downloads}
