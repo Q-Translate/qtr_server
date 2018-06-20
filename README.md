@@ -60,6 +60,14 @@ people. http://info.qtranslate.org
     https://qcl.example.org
 
 
+## Import the translations
+
+    ds exec data/import.sh <lng>
+
+If the argument `lng` is missing, then all the languages on `settings.sh`
+will be imported.
+
+
 ## Other commands
 
     ds help
