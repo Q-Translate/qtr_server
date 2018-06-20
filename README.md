@@ -24,11 +24,11 @@ people. http://info.qtranslate.org
     git clone https://github.com/Q-Translate/qtr_server /opt/docker-scripts/qtr_server
     ```
 
-  - Create a directory for the container: `ds init qtr_server/ds @qtr-example-org`
+  - Create a directory for the container: `ds init qtr_server/ds @qtr.example.org`
 
   - Fix the settings:
     ```
-    cd /var/ds/qtr-example-org/
+    cd /var/ds/qtr.example.org/
     vim settings.sh
     ```
 
@@ -39,11 +39,11 @@ people. http://info.qtranslate.org
 
   - See: https://github.com/Q-Translate/qtr_client#installation
 
-  - Setup oauth2 login between the client and the server: `ds @qcl-example-org setup-oauth2-login @qtr-example-org`
+  - Setup oauth2 login between the client and the server: `ds @qcl.example.org setup-oauth2-login @qtr.example.org`
     or
     ```
-    cd /var/ds/qcl-example-org/
-    ds setup-oauth2-login @qtr-example-org
+    cd /var/ds/qcl.example.org/
+    ds setup-oauth2-login @qtr.example.org
     ```
 
 

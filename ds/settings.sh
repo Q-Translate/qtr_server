@@ -2,7 +2,7 @@ APP=qtr_server/ds
 
 ### Docker settings.
 IMAGE=qtr_server
-CONTAINER=qtr-example-org
+CONTAINER=qtr.example.org
 DOMAIN="qtr.example.org"
 
 ### Uncomment if this installation is for development.
