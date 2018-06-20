@@ -42,4 +42,4 @@ for lng in $languages; do
         drush qtr-import $lng $author "$(pwd)/$file" --force
     done
 done
-echo 'DONE (press Ctrl+c)'
+echo -e "\nDONE"
