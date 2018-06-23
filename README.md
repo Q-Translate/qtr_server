@@ -68,6 +68,14 @@ If the argument `lng` is missing, then all the languages on `settings.sh`
 will be imported.
 
 
+## Backup and restore
+
+    ds backup data
+    ds backup btr_dev
+    ds backup
+    ds restore <backup-file.tgz>
+    
+    
 ## Other commands
 
     ds help
@@ -86,6 +94,3 @@ will be imported.
     ds inject dev/clone.sh test
     ds inject dev/clone-del.sh test
     ds inject dev/clone.sh 01
-
-    ds backup [proj1]
-    ds restore <backup-file.tgz> [proj1]
