@@ -1,6 +1,5 @@
 recaptcha_site_key
 recaptcha_secret_key
-googleanalytics_account
 cron_key
 date_default_timezone
 date_first_day
@@ -9,7 +8,6 @@ mimemail_mail
 site_default_country
 site_mail
 site_name
-site_slogan
 smtp_from
 smtp_fromname
 smtp_host
