@@ -19,4 +19,7 @@ cmd_remake() {
     # restore
     local backup_file="backup-full-$(date +%Y%m%d).tgz"
     ds restore $backup_file
+
+    # re-import the data
+    ds exec data/import.sh
 }

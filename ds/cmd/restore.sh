@@ -74,6 +74,9 @@ _make_full_restore() {
     rm -rf var-www/{qtr,qtr_dev,downloads}
     cp -a $backup/{qtr,qtr_dev,downloads} var-www/
 
+    # restore the data from the backup dir
+    ds inject restore.sh $backup
+
     # clean up
     rm -rf $backup
 

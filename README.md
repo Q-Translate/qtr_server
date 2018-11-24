@@ -71,8 +71,8 @@ will be imported.
 ## Backup and restore
 
     ds backup data
-    ds backup btr_dev
-    ds backup
+    ds backup qtr_dev
+    ds backup full
     ds restore <backup-file.tgz>
     
     
