@@ -34,3 +34,4 @@ hybridauth_provider_LinkedIn_keys_key
 hybridauth_provider_LinkedIn_keys_secret
 hybridauth_provider_Twitter_keys_key
 hybridauth_provider_Twitter_keys_secret
+user_register
