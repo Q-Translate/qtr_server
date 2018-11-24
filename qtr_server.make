@@ -76,12 +76,6 @@ projects[l10n_update] = 2.2
 ;;; Performance
 projects[boost] = 1.2
 
-;;; Services and Social
-projects[google_analytics] = 2.3
-;projects[drupalchat] = 1.7
-;projects[simplenews] = 1.1
-;projects[mass_contact] = 1.0
-
 ;--------------------
 ; Sending Emails
 ;--------------------
@@ -108,12 +102,10 @@ libraries[tinymce][download][url] = https://github.com/tinymce/tinymce/archive/4
 ; Misc
 ;--------------------
 
-;projects[homebox] = 2.0-rc1
 projects[contact_forms] = 1.8
 projects[menu_target] = 1.7
 projects[empty_front_page] = 1.0
 projects[nocurrent_pass] = 1.1
-projects[honeypot] = 1.22
 projects[advuser] = 3.x-dev
 
 ;--------------------

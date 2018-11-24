@@ -1,8 +1,0 @@
-<?php
-/**
- * @file
- * Code for the qtr_googleanalytics feature.
- */
-
-include_once 'qtr_googleanalytics.admin.inc';
-include_once 'qtr_googleanalytics.features.inc';

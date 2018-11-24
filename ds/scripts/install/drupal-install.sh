@@ -62,11 +62,6 @@ $drush features-revert qtr_hybridauth
 $drush pm-enable qtr_permissions
 $drush features-revert qtr_permissions
 
-#$drush pm-enable qtr_invite
-#$drush pm-enable qtr_simplenews
-#$drush pm-enable qtr_mass_contact
-#$drush pm-enable qtr_googleanalytics
-
 ### update to the latest version of core and modules
 #$drush pm-refresh
 #$drush pm-update
