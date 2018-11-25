@@ -24,7 +24,10 @@ restore_config() {
     drush @qtr_dev php-script $(pwd)/restore-private-vars-qtr-dev.php
 
     # twitter config
-    [[ -f trc ]] && cp trc /home/twitter/.trc
+    if [[ -f trc ]]; then
+        cp trc /home/twitter/.trc
+        chown twitter: /home/twitter/.trc
+    fi
 }
 
 restore_custom_scripts() {
