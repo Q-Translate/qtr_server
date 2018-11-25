@@ -8,7 +8,7 @@ _EOF
 
 cmd_remake() {
     # backup
-    ds backup
+    ds backup data
 
     # reinstall
     ds remove
@@ -17,7 +17,7 @@ cmd_remake() {
     ds wsproxy ssl-cert
 
     # restore
-    local backup_file="backup-full-$(date +%Y%m%d).tgz"
+    local backup_file="backup-data-$(date +%Y%m%d).tgz"
     ds restore $backup_file
 
     # re-import the data
