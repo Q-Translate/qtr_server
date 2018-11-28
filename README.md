@@ -46,6 +46,8 @@ people. http://info.qtranslate.org
     ds setup-oauth2-login @qtr.example.org
     ```
 
+  - Customize the local command 'remake': `vim cmd/remake.sh`
+
 
 ## Access the website
 
